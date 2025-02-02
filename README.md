@@ -16,7 +16,7 @@ Redirect3DS is a Godot C# port of the (almost) decade-old InputRedirection-Qt cl
 
 > [!NOTE]
 > The app will not work in the background, so I recommend you turn your phone's brightness down.
-> This does use a fair bit of battery too, so I recommend you keep your phone plugged in while using the app.
+> This does use a fair bit of battery too, so I also recommend to keep your phone plugged in while using the app.
 ### PC
 1. Build and run the app
 2. Connect a controller to your PC
