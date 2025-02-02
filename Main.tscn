@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://derhy2absrt7w"]
+
+[ext_resource type="Script" path="res://Manager.cs" id="1_j554y"]
+[ext_resource type="PackedScene" uid="uid://dsptwn08co02p" path="res://ControllerListing.tscn" id="2_x6lnn"]
+
+[node name="Manager" type="Control" node_paths=PackedStringArray("IPAddress", "SendPackets", "GamepadTitleLabel", "GamepadList")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j554y")
+IPAddress = NodePath("ContainerLol/IPInp")
+SendPackets = NodePath("ContainerLol/SendData")
+GamepadTitleLabel = NodePath("ContainerLol/Title")
+GamepadList = NodePath("ContainerLol/GamepadListScroller/GamepadList")
+GamepadLabelScene = ExtResource("2_x6lnn")
+
+[node name="ContainerLol" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IPInp" type="TextEdit" parent="ContainerLol"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_mode = 1
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter 3DS IP"
+wrap_mode = 1
+
+[node name="SendData" type="Button" parent="ContainerLol"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "Start sending data"
+
+[node name="Title" type="RichTextLabel" parent="ContainerLol"]
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[b][u]Connected Gamepads[/u][/b] [i][color=#bbbbbb](20)[/color][/i]"
+fit_content = true
+
+[node name="GamepadListScroller" type="ScrollContainer" parent="ContainerLol"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="GamepadList" type="VBoxContainer" parent="ContainerLol/GamepadListScroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
